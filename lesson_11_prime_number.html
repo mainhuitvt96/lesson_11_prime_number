@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime number</title>
+</head>
+<body>
+    <script>
+        
+        function checkNT(number) {
+            let count = 0; // đếm số ước của số đang xét
+            let countSNT = 0; // đếm xem đã đủ số lượng số nguyên tố cần in ra chưa;
+            for (let i = 2;; i++) { // dãy số sẽ tăng cho đến khi tìm được number số nguyên tố
+                if (countSNT < number) { // Nếu số lượng SNT in ra < so với số lượng yêu cầu
+                    for (let j = 1; j <= i; j++) {
+                        if (i % j == 0) { // Vòng lặp for sẽ chạy cho đến khi j<=i thì mới thực hiện lệnh if bên dưới
+                            count += 1; 
+                        }
+                    }
+                    if (count == 2) { // nếu ước của i chỉ có 2 thì i thỏa điều kiện 
+                        document.write(i + "<br>"); 
+                        countSNT += 1; //đã lưu được i số nguyên tố
+                    }
+                    count = 0; // sau khi thỏa điện kiện của lệnh if thứ 2 thì gán lại count để chạy lệnh for đầu tiên
+                } else {
+                    break;
+                }
+            }
+        }
+        let number = parseInt(prompt("Nhập n số nguyên tố đầu tiên: "));
+        checkNT(number);
+            
+  
+        // let numbers = Number(prompt('nhập n số nguyên tố đầu tiên: '));
+        // let foundPrimeNumbers = 0; //số lượng nguyên tố tìm thấy
+        // let commomDivisorNum = 0; //số lượng ước chung
+        // const MAX_INT_NUM = Number.MAX_SAFE_INTEGER
+        // for (let i = 2; i < MAX_INT_NUM; i++) {
+        //     if (foundPrimeNumbers < numbers) {
+        //     for (let j = 1; j <= 1; j++ ) {
+        //         if (i % j === 0)
+        //         commomDivisorNum++
+        //     }
+        //         if (commomDivisorNum === 2){
+        //         document.write(i + "<br>");
+        //         foundPrimeNumbers++;
+        //         }
+        //         commomDivisorNum = 0;
+        //     }else {
+        //     break;
+        //     }
+        // }
+</script>
+        
+
+    </script>
+</body>
+</html>
